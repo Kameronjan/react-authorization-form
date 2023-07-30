@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Contact() {
   const password = 'swordfish';
-  const [authorized, setAuthorized] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
 
   function handleSubmit(e) {
     const enteredPassword = e.target.querySelector(
@@ -16,6 +16,7 @@ function Contact() {
       <input
         type="password"
         placeholder="Password"
+        onSubmit = "handleSubmit"
       />
     </form>
   );
