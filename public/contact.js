@@ -11,7 +11,8 @@ function Contact() {
     setAuthorized(auth)
   }
 
-  const login = <form action="#"> (
+  const login = (
+    <form action="#">
       <input
         type="password"
         placeholder="Password"
