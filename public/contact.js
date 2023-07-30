@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Contact() {
   const password = 'swordfish';
-  const [authorized, setAuthorized] = useState(false);
+  const [authorized, setAuthorized] = useState(true);
 
   function handleSubmit(e) {
     const enteredPassword = e.target.querySelector(
@@ -13,7 +13,7 @@ function Contact() {
 
   return (
       <div id="authorization">
-        <h1>Contact</h1>
+        {authorized ? <h1>Contact</h1> : <h1>Enter the Password</h1>}
         <ul>
           <li>
             client@example.com
