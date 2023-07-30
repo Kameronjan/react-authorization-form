@@ -5,18 +5,20 @@ function Contact() {
   const [authorized, setAuthorized] = useState(false);
 
   function handleSubmit(e) {
-    const enteredPassword = e.target.querySelector(
-      'input[type="password"]').value;
-    const auth = enteredPassword == password;
-    setAuthorized(auth)
+    e.preventDefault();
+    const enteredPassword = e.target.querySelector('input[type="password"]').value;
+    const auth = enteredPassword === password;
+    setAuthorized(auth);
   }
 
   const login = (
-    <form action="#">
+    <form action="#" onSubmit={handleSubmit}>
       <input
         type="password"
         placeholder="Password"
-        onSubmit = "handleSubmit"
+      />
+      <input
+        type="submit"
       />
     </form>
   );
@@ -33,9 +35,10 @@ function Contact() {
   );
 
   return (
-      <div id="authorization">
-        {authorized ? <h1>Contact</h1> : <h1>Enter the Password</h1>}
-      </div>
+    <div id="authorization">
+      {authorized ? <h1>Contact</h1> : <h1>Enter the Password</h1>}
+      {authorized ? contactInfo : login}
+    </div>
   );
 }
 
